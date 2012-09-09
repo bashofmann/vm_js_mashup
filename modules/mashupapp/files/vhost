@@ -1,0 +1,18 @@
+<VirtualHost *:80>
+    ServerName localhost
+    DocumentRoot /opt
+    DirectoryIndex index.php index.html index.htm
+
+    <Directory />
+        Options FollowSymLinks
+        AllowOverride None
+    </Directory>
+
+    <Directory /opt>
+        AllowOverride All
+        Options Indexes FollowSymLinks All
+        Order allow,deny
+        Allow from all
+    </Directory>
+
+</VirtualHost>

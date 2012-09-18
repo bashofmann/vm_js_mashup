@@ -26,12 +26,10 @@ class mashupapp {
         "status.io":
             command => "/usr/bin/npm install socket.io@0.9.6",
             unless => "/usr/bin/npm list | /bin/grep 'socket.io@0.9.6'",
-            cwd => "/opt/statusnet_js_mashup_2nd/backend",
             require => Package["nodejs","npm"];
         "oexchange":
             command => "/usr/bin/npm install oexchange@0.1.1",
             unless => "/usr/bin/npm list | /bin/grep 'oexchange@0.1.1'",
-            cwd => "/opt/statusnet_js_mashup_2nd/backend",
             require => Package["nodejs","npm","make","g++"];
     }
 }
